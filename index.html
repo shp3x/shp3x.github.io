@@ -13,6 +13,7 @@
 <script>
     let tg = window.Telegram.WebApp;
     let user_id = tg.initDataUnsafe.user.id;
+    tg.MainButton.show()
     document.getElementById('user_id').innerHTML = user_id;
 </script>
 </html>
