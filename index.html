@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script>
-        let tg = window.Telegram.WebApp;
-        let user_id = tg.initDataUnsafe.user.id
-        document.getElementById('user_unique_id').innerText = user_id
-        console.log(123)
-    </script>
     <title>Document</title>
 </head>
 <body>
     <h1 id="user_unique_id"></h1>
 </body>
+<script>
+    let tg = window.Telegram.WebApp;
+    let user_id = tg.initDataUnsafe.user.id
+    document.getElementById('user_unique_id').innerText = user_id
+    console.log(123)
+</script>
 </html>
