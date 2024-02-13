@@ -11,8 +11,8 @@
     <h1 id="user_id"></h1>
     <script>
         let tg = window.Telegram.WebApp;
+        tg.MainButton.show();
         let user_id = tg.initDataUnsafe.user.id;
-        tg.MainButton.show()
         document.getElementById('user_id').innerHTML = user_id;
     </script>
 </body>
