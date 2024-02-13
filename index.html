@@ -8,12 +8,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 id="user_unique_id">Hello</h1>
+    <h1 id="user_id"></h1>
 </body>
 <script>
     let tg = window.Telegram.WebApp;
-    let user_id = tg.initDataUnsafe.user.id
-    document.getElementById('user_unique_id').innerHTML = user_id
-    console.log(123)
+    let user_id = tg.initDataUnsafe.user.id;
+    document.getElementById('user_id').innerHTML = user_id;
 </script>
 </html>
