@@ -7,6 +7,7 @@
     <title>invest</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/Navbar-With-Button-icons.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 
 <body>
@@ -39,7 +40,7 @@
                         </svg></div>
                     <div class="px-3">
                         <h4>Title</h4>
-                        <p>Erat netus est hendrerit, nullam et quis ad cras porttitor iaculis. Bibendum vulputate cras aenean.</p><button class="btn btn-primary" type="button">Button</button>
+                        <p>Erat netus est hendrerit, nullam et quis ad cras porttitor iaculis. Bibendum vulputate cras aenean.</p><button class="btn btn-primary" type="button" onclick=tg.sendData('hello world')>Button</button>
                     </div>
                 </div>
             </div>
@@ -68,6 +69,9 @@
             </div>
         </div>
     </div>
+    <script type='text/javascript'>
+        let tg = window.Telegram.WebApp;
+    </script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
