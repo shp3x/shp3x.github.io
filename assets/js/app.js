@@ -3,7 +3,7 @@ function changeTheme() {
         document.body.style.backgroundColor = 'rgb(247,249,251)'
         document.getElementById('themeIcon').className = 'far fa-moon'
         document.getElementById('themeIcon').style.color = 'rgb(0, 0, 0)'
-        document.getElementById('tonLogo').src = '/assets/img/ton_logo_light_background.svg'
+        document.getElementById('tonLogo').src = 'assets/img/ton_logo_light_background.svg'
         document.getElementById('mainBannerText').style.color = 'rgb(0, 0, 0)'
         document.getElementById('statsBanner').style.color = 'rgb(0, 0, 0)'
     }
@@ -11,7 +11,7 @@ function changeTheme() {
         document.body.style.backgroundColor = 'rgb(30,35,55)'
         document.getElementById('themeIcon').className = 'far fa-sun'
         document.getElementById('themeIcon').style.color = 'rgb(255, 255, 255)'
-        document.getElementById('tonLogo').src = '/assets/img/ton_logo_dark_background.svg'
+        document.getElementById('tonLogo').src = 'assets/img/ton_logo_dark_background.svg'
         document.getElementById('mainBannerText').style.color = 'rgb(255, 255, 255)'
         document.getElementById('statsBanner').style.color = 'rgb(255, 255, 255)'
     }
@@ -27,6 +27,7 @@ function enableExchangeButton() {
 }
 
 async function showModalWindow() {
+    console.log(tonConnectUI.modalState)
     $('#myModal').modal('show');
 }
 
@@ -47,7 +48,7 @@ async function createTransaction() {
     }
     try {
     const result = await tonConnectUI.sendTransaction(transaction,{
-    // modals: ['before', 'success', 'error'],
+    modals: ['before', 'success', 'error'],
     notifications: ['before', 'success', 'error']
 });
     const someTxData = await myAppExplorerService.getTransaction(result.boc);
