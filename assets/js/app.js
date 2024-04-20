@@ -1,6 +1,8 @@
+const header = new Headers()
+
 function changeTheme() {
     if (document.body.style.backgroundColor == 'rgb(30, 35, 55)') {
-        document.body.style.backgroundColor = 'rgb(247,249,251)'
+        document.body.style.backgroundColor = 'rgb(247, 249, 251)'
         document.getElementById('themeIcon').className = 'far fa-moon'
         document.getElementById('themeIcon').style.color = 'rgb(0, 0, 0)'
         document.getElementById('tonLogo').src = 'assets/img/ton_logo_light_background.svg'
@@ -8,7 +10,7 @@ function changeTheme() {
         document.getElementById('statsBanner').style.color = 'rgb(0, 0, 0)'
     }
     else {
-        document.body.style.backgroundColor = 'rgb(30,35,55)'
+        document.body.style.backgroundColor = 'rgb(30, 35, 55)'
         document.getElementById('themeIcon').className = 'far fa-sun'
         document.getElementById('themeIcon').style.color = 'rgb(255, 255, 255)'
         document.getElementById('tonLogo').src = 'assets/img/ton_logo_dark_background.svg'
@@ -27,13 +29,30 @@ function enableExchangeButton() {
 }
 
 async function showModalWindow() {
-    console.log(tonConnectUI.modalState)
-    if (tonConnectUI.modalState.closedReason == 'wallet-selected') {
-        $('#walletAlert').style.display = 'none'
+    console.log("Wallet connection state", tonConnectUI.connected)
+
+    if (document.body.style.backgroundColor == "rgb(30, 35, 55)") {
+        document.getElementById('modalContent').style.backgroundColor = 'rgb(30, 35, 55)'
+        document.getElementById('modalTitle').style.color = 'rgb(247, 249, 251)'
+    } else {
+        document.getElementById('modalContent').style.backgroundColor = 'rgb(247, 249, 251)'
+        document.getElementById('modalTitle').style.color = 'rgb(30, 35, 55)'
+    }
+
+    if (tonConnectUI.connected == true) {
+        $('#walletAlert').addClass('d-none')
+        $('#amountValue').prop("readonly", false)
+        $('#cardNumber').prop("readonly", false)
+        document.getElementById('exchangeButton').disabled = false;
+
         $('#myModal').modal('show');
-        document.getElementsById('exchangeButton').disabled = false;
     }
     else {
+        $('#walletAlert').removeClass('d-none')
+        $('#amountValue').prop("readonly", true)
+        $('#cardNumber').prop("readonly", true)
+        document.getElementById('exchangeButton').disabled = true;
+
         $('#myModal').modal('show');
     }
 }
