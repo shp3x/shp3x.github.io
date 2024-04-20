@@ -28,7 +28,14 @@ function enableExchangeButton() {
 
 async function showModalWindow() {
     console.log(tonConnectUI.modalState)
-    $('#myModal').modal('show');
+    if (tonConnectUI.modalState.closedReason == 'wallet-selected') {
+        $('#walletAlert').style.display = 'none'
+        $('#myModal').modal('show');
+        document.getElementsById('exchangeButton').disabled = false;
+    }
+    else {
+        $('#myModal').modal('show');
+    }
 }
 
 async function changeAmount() {
