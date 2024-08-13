@@ -1,0 +1,26 @@
+#mainBannerText {
+  background-color: rgba(0,0,0,0.08);
+  border-radius: 50px;
+  height: 400px;
+  color: rgb(0, 0, 0);
+}
+
+#card {
+  background-color: rgba(0,0,0,0.08);
+  border-radius: 30px;
+  margin-top: 10px;
+  transition: 0.5s;
+}
+
+#themeIcon:hover {
+  background-color: rgba(130,130,130,0.08);
+}
+
+#card:hover {
+  transform: scale(1.05);
+}
+
+#tonLogo {
+  transition: 3s;
+}
+
